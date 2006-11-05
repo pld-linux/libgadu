@@ -1,5 +1,7 @@
-%bcond_without	pthread		# build with POSIX threads support
-
+#
+# Conditional build:
+%bcond_without	pthread		# POSIX threads support
+#
 Summary:	libgadu library
 Summary(es):	Biblioteca libgadu
 Summary(pl):	Biblioteka libgadu
@@ -34,53 +36,51 @@ Gadu-Gadu a su software.
 libgadu umo¿liwia ³atwe dodanie do ró¿nych aplikacji komunikacji
 bazuj±cej na protokole Gadu-Gadu.
 
-%package -n libgadu-devel
+%package devel
 Summary:	libgadu development library
 Summary(es):	Biblioteca de desarrollo de libgadu
 Summary(pl):	Czê¶æ biblioteki libgadu dla programistów
-License:	LGPL v2.1
 Group:		Development/Libraries
-Requires:	libgadu = %{epoch}:%{version}-%{release}
+Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	openssl-devel
 Obsoletes:	libgg-devel
 
-%description -n libgadu-devel
+%description devel
 The libgadu-devel package contains the header files and some
 documentation needed to develop application with libgadu.
 
-%description -n libgadu-devel -l de
+%description devel -l de
 Das libgadu-devel Paket enthält Header-Files (Kopfzeilenordner) und
 die Dokumentation die Sie benötigen um mit libgadu Anwendungen zu
 entwickeln.
 
-%description -n libgadu-devel -l es
+%description devel -l es
 El paquete libgadu-devel contiene los ficheros de cabecera, juntos con
 una documentación, necesarios para desarrollar aplicaciones que usar
 libgadu.
 
-%description -n libgadu-devel -l pl
+%description devel -l pl
 Pakiet libgadu-devel zawiera pliki nag³ówkowe i dokumentacjê,
 potrzebne do kompilowania aplikacji korzystaj±cych z libgadu.
 
-%package -n libgadu-static
+%package static
 Summary:	Static libgadu library
 Summary(es):	Biblioteca libgadu estática
 Summary(pl):	Statyczna biblioteka libgadu
-License:	LGPL v2.1
 Group:		Development/Libraries
-Requires:	libgadu-devel = %{epoch}:%{version}-%{release}
+Requires:	%{name}-devel = %{epoch}:%{version}-%{release}
 Obsoletes:	libgg-static
 
-%description -n libgadu-static
+%description static
 Static libgadu library.
 
-%description -n libgadu-static -l de
+%description static -l de
 Statisches libgadu Archiv.
 
-%description -n libgadu-static -l es
+%description static -l es
 Biblioteca libgadu estática.
 
-%description -n libgadu-static -l pl
+%description static -l pl
 Statyczna biblioteka libgadu.
 
 %prep
