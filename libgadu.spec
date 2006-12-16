@@ -101,6 +101,7 @@ Statyczna biblioteka libgadu.
 	--without-pthread \
 	--without-bind
 %endif
+
 %{__make}
 
 %install
