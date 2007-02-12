@@ -3,8 +3,8 @@
 %bcond_without	pthread		# POSIX threads support
 #
 Summary:	libgadu library
-Summary(es.UTF-8):   Biblioteca libgadu
-Summary(pl.UTF-8):   Biblioteka libgadu
+Summary(es.UTF-8):	Biblioteca libgadu
+Summary(pl.UTF-8):	Biblioteka libgadu
 Name:		libgadu
 Version:	1.7.0
 Release:	1
@@ -38,8 +38,8 @@ bazującej na protokole Gadu-Gadu.
 
 %package devel
 Summary:	libgadu development library
-Summary(es.UTF-8):   Biblioteca de desarrollo de libgadu
-Summary(pl.UTF-8):   Część biblioteki libgadu dla programistów
+Summary(es.UTF-8):	Biblioteca de desarrollo de libgadu
+Summary(pl.UTF-8):	Część biblioteki libgadu dla programistów
 Group:		Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	openssl-devel
@@ -65,8 +65,8 @@ potrzebne do kompilowania aplikacji korzystających z libgadu.
 
 %package static
 Summary:	Static libgadu library
-Summary(es.UTF-8):   Biblioteca libgadu estática
-Summary(pl.UTF-8):   Statyczna biblioteka libgadu
+Summary(es.UTF-8):	Biblioteca libgadu estática
+Summary(pl.UTF-8):	Statyczna biblioteka libgadu
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{epoch}:%{version}-%{release}
 Obsoletes:	libgg-static
