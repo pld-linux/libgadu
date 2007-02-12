@@ -3,8 +3,8 @@
 %bcond_without	pthread		# POSIX threads support
 #
 Summary:	libgadu library
-Summary(es):	Biblioteca libgadu
-Summary(pl):	Biblioteka libgadu
+Summary(es.UTF-8):   Biblioteca libgadu
+Summary(pl.UTF-8):   Biblioteka libgadu
 Name:		libgadu
 Version:	1.7.0
 Release:	1
@@ -24,22 +24,22 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 libgadu is intended to make it easy to add Gadu-Gadu communication
 support to your software.
 
-%description -l de
-Mit libgadu ist es Ihnen möglich auf einfache Weise Gadu-Gadu
-Kommunikations-Unterstützung in Ihre Software einzubinden.
+%description -l de.UTF-8
+Mit libgadu ist es Ihnen mÃ¶glich auf einfache Weise Gadu-Gadu
+Kommunikations-UnterstÃ¼tzung in Ihre Software einzubinden.
 
-%description -l es
-libgadu está pensada para facilitar añadirle comunicación vía
+%description -l es.UTF-8
+libgadu estÃ¡ pensada para facilitar aÃ±adirle comunicaciÃ³n vÃ­a
 Gadu-Gadu a su software.
 
-%description -l pl
-libgadu umo¿liwia ³atwe dodanie do ró¿nych aplikacji komunikacji
-bazuj±cej na protokole Gadu-Gadu.
+%description -l pl.UTF-8
+libgadu umoÅ¼liwia Å‚atwe dodanie do rÃ³Å¼nych aplikacji komunikacji
+bazujÄ…cej na protokole Gadu-Gadu.
 
 %package devel
 Summary:	libgadu development library
-Summary(es):	Biblioteca de desarrollo de libgadu
-Summary(pl):	Czê¶æ biblioteki libgadu dla programistów
+Summary(es.UTF-8):   Biblioteca de desarrollo de libgadu
+Summary(pl.UTF-8):   CzÄ™Å›Ä‡ biblioteki libgadu dla programistÃ³w
 Group:		Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	openssl-devel
@@ -49,24 +49,24 @@ Obsoletes:	libgg-devel
 The libgadu-devel package contains the header files and some
 documentation needed to develop application with libgadu.
 
-%description devel -l de
-Das libgadu-devel Paket enthält Header-Files (Kopfzeilenordner) und
-die Dokumentation die Sie benötigen um mit libgadu Anwendungen zu
+%description devel -l de.UTF-8
+Das libgadu-devel Paket enthÃ¤lt Header-Files (Kopfzeilenordner) und
+die Dokumentation die Sie benÃ¶tigen um mit libgadu Anwendungen zu
 entwickeln.
 
-%description devel -l es
+%description devel -l es.UTF-8
 El paquete libgadu-devel contiene los ficheros de cabecera, juntos con
-una documentación, necesarios para desarrollar aplicaciones que usar
+una documentaciÃ³n, necesarios para desarrollar aplicaciones que usar
 libgadu.
 
-%description devel -l pl
-Pakiet libgadu-devel zawiera pliki nag³ówkowe i dokumentacjê,
-potrzebne do kompilowania aplikacji korzystaj±cych z libgadu.
+%description devel -l pl.UTF-8
+Pakiet libgadu-devel zawiera pliki nagÅ‚Ã³wkowe i dokumentacjÄ™,
+potrzebne do kompilowania aplikacji korzystajÄ…cych z libgadu.
 
 %package static
 Summary:	Static libgadu library
-Summary(es):	Biblioteca libgadu estática
-Summary(pl):	Statyczna biblioteka libgadu
+Summary(es.UTF-8):   Biblioteca libgadu estÃ¡tica
+Summary(pl.UTF-8):   Statyczna biblioteka libgadu
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{epoch}:%{version}-%{release}
 Obsoletes:	libgg-static
@@ -74,13 +74,13 @@ Obsoletes:	libgg-static
 %description static
 Static libgadu library.
 
-%description static -l de
+%description static -l de.UTF-8
 Statisches libgadu Archiv.
 
-%description static -l es
-Biblioteca libgadu estática.
+%description static -l es.UTF-8
+Biblioteca libgadu estÃ¡tica.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Statyczna biblioteka libgadu.
 
 %prep
