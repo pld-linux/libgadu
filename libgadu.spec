@@ -7,7 +7,7 @@ Summary(es.UTF-8):	Biblioteca libgadu
 Summary(pl.UTF-8):	Biblioteka libgadu
 Name:		libgadu
 Version:	1.7.0
-Release:	1
+Release:	2
 Epoch:		4
 License:	LGPL v2.1
 Group:		Libraries
@@ -95,11 +95,11 @@ Statyczna biblioteka libgadu.
 	--enable-dynamic \
 	--enable-shared \
 	--enable-static \
+	--without-bind \
 %if %{with pthread}
 	--with-pthread \
 %else
 	--without-pthread \
-	--without-bind
 %endif
 
 %{__make}
