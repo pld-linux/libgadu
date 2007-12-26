@@ -6,13 +6,15 @@ Summary:	libgadu library
 Summary(es.UTF-8):	Biblioteca libgadu
 Summary(pl.UTF-8):	Biblioteka libgadu
 Name:		libgadu
+%define snap	20071226
 Version:	1.7.1
-Release:	1
+Release:	1.%{snap}.1
 Epoch:		4
 License:	LGPL v2.1
 Group:		Libraries
-Source0:	http://toxygen.net/libgadu/files/%{name}-%{version}.tar.gz
-# Source0-md5:	5ceb20befbdfc50ddc9598d24ca3b400
+#Source0:	http://toxygen.net/libgadu/files/%{name}-%{version}.tar.gz
+Source0:	%{name}-%{snap}.tar.bz2
+# Source0-md5:	c0c32bf3400fd4a56e804bf8b1ca2b7b
 URL:		http://toxygen.net/libgadu/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -84,11 +86,12 @@ Biblioteca libgadu estática.
 Statyczna biblioteka libgadu.
 
 %prep
-%setup -q
+%setup -q -n %{name}-%{snap}
 
 %build
 %{__aclocal} -I m4
 %{__autoconf}
+%{__libtoolize}
 %{__autoheader}
 %{__automake}
 %configure \
