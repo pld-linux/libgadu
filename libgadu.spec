@@ -6,16 +6,17 @@ Summary:	libgadu library
 Summary(es.UTF-8):	Biblioteca libgadu
 Summary(pl.UTF-8):	Biblioteka libgadu
 Name:		libgadu
-Version:	1.7.1
+Version:	1.8.0
 Release:	1
 Epoch:		4
 License:	LGPL v2.1
 Group:		Libraries
 Source0:	http://toxygen.net/libgadu/files/%{name}-%{version}.tar.gz
-# Source0-md5:	5ceb20befbdfc50ddc9598d24ca3b400
+# Source0-md5:	a5257e6f2cd5e309837f5fe567e9b94a
 URL:		http://toxygen.net/libgadu/
 BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	libtool
 BuildRequires:	openssl-devel >= 0.9.7d
 Obsoletes:	libgg
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -87,6 +88,7 @@ Statyczna biblioteka libgadu.
 %setup -q
 
 %build
+%{__libtoolize}
 %{__aclocal} -I m4
 %{__autoconf}
 %{__autoheader}
@@ -119,6 +121,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libgadu.so.*.*
+%ghost %attr(755,root,root) %{_libdir}/libgadu.so.?
 
 %files -n libgadu-devel
 %defattr(644,root,root,755)
