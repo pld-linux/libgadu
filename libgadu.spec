@@ -2,19 +2,19 @@
 # Conditional build:
 %bcond_without	pthread		# POSIX threads support
 #
+%define rev 	rc1
+
 Summary:	libgadu library
 Summary(es.UTF-8):	Biblioteca libgadu
 Summary(pl.UTF-8):	Biblioteka libgadu
 Name:		libgadu
-%define snap	20071226
-Version:	1.7.1
-Release:	1.%{snap}.1
+Version:	1.9.0
+Release:	0.%{rev}.1
 Epoch:		4
 License:	LGPL v2.1
 Group:		Libraries
-#Source0:	http://toxygen.net/libgadu/files/%{name}-%{version}.tar.gz
-Source0:	%{name}-%{snap}.tar.bz2
-# Source0-md5:	c0c32bf3400fd4a56e804bf8b1ca2b7b
+Source0:	http://toxygen.net/libgadu/files/%{name}-%{version}-%{rev}.tar.gz
+# Source0-md5:	96d2e3e48803ff6cd2a281c0b52d2167
 URL:		http://toxygen.net/libgadu/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -86,7 +86,7 @@ Biblioteca libgadu estática.
 Statyczna biblioteka libgadu.
 
 %prep
-%setup -q -n %{name}-%{snap}
+%setup -q -n %{name}-%{version}-%{rev}
 
 %build
 %{__aclocal} -I m4
