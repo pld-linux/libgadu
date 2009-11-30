@@ -2,7 +2,7 @@
 # Conditional build:
 %bcond_without	pthread		# POSIX threads support
 #
-%define rev 	rc1
+%define rev 	rc2
 
 Summary:	libgadu library
 Summary(es.UTF-8):	Biblioteca libgadu
@@ -14,7 +14,7 @@ Epoch:		4
 License:	LGPL v2.1
 Group:		Libraries
 Source0:	http://toxygen.net/libgadu/files/%{name}-%{version}-%{rev}.tar.gz
-# Source0-md5:	96d2e3e48803ff6cd2a281c0b52d2167
+# Source0-md5:	2d2a96a98e33d3a0055bc76f67a19f04
 URL:		http://toxygen.net/libgadu/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -122,6 +122,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libgadu.so.*.*
+%ghost %attr(755,root,root) %{_libdir}/libgadu.so.3
 
 %files -n libgadu-devel
 %defattr(644,root,root,755)
