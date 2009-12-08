@@ -18,6 +18,7 @@ BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libtool
 BuildRequires:	openssl-devel >= 0.9.7d
+BuildRequires:	pkgconfig
 Obsoletes:	libgg
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -121,7 +122,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libgadu.so.*.*
-%ghost %attr(755,root,root) %{_libdir}/libgadu.so.?
+%attr(755,root,root) %ghost %{_libdir}/libgadu.so.?
 
 %files -n libgadu-devel
 %defattr(644,root,root,755)
