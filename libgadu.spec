@@ -18,6 +18,7 @@ Source0:	http://toxygen.net/libgadu/files/%{name}-%{version}-%{rev}.tar.gz
 URL:		http://toxygen.net/libgadu/
 BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	libtool
 BuildRequires:	openssl-devel >= 0.9.7d
 BuildRequires:	pkgconfig
 Obsoletes:	libgg
