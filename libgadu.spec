@@ -7,7 +7,7 @@ Summary(es.UTF-8):	Biblioteca libgadu
 Summary(pl.UTF-8):	Biblioteka libgadu
 Name:		libgadu
 Version:	1.8.2
-Release:	2
+Release:	3
 Epoch:		4
 License:	LGPL v2.1
 Group:		Libraries
