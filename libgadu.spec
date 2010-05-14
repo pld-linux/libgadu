@@ -2,19 +2,18 @@
 # Conditional build:
 %bcond_without	pthread		# POSIX threads support
 #
-%define rev 	rc3
 
 Summary:	libgadu library
 Summary(es.UTF-8):	Biblioteca libgadu
 Summary(pl.UTF-8):	Biblioteka libgadu
 Name:		libgadu
 Version:	1.9.0
-Release:	0.%{rev}.2
+Release:	1
 Epoch:		4
 License:	LGPL v2.1
 Group:		Libraries
-Source0:	http://toxygen.net/libgadu/files/%{name}-%{version}-%{rev}.tar.gz
-# Source0-md5:	b13337fd1beaf98056bc7bfa27ff5d31
+Source0:	http://toxygen.net/libgadu/files/%{name}-%{version}.tar.gz
+# Source0-md5:	4a18762d984e20495aa39a4032c17d5f
 URL:		http://toxygen.net/libgadu/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -88,7 +87,7 @@ Biblioteca libgadu estática.
 Statyczna biblioteka libgadu.
 
 %prep
-%setup -q -n %{name}-%{version}-%{rev}
+%setup -q
 
 %build
 %{__libtoolize}
