@@ -15,7 +15,7 @@ Group:		Libraries
 Source0:	http://toxygen.net/libgadu/files/%{name}-%{version}.tar.gz
 # Source0-md5:	8d68489f3c01daba95fd1f20661437fb
 URL:		http://toxygen.net/libgadu/
-BuildRequires:	autoconf
+BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
 BuildRequires:	libtool
 BuildRequires:	openssl-devel >= 0.9.7d
@@ -93,7 +93,6 @@ Statyczna biblioteka libgadu.
 %{__libtoolize}
 %{__aclocal} -I m4
 %{__autoconf}
-%{__libtoolize}
 %{__autoheader}
 %{__automake}
 %configure \
@@ -123,12 +122,12 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+%doc AUTHORS ChangeLog NEWS README
 %attr(755,root,root) %{_libdir}/libgadu.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libgadu.so.3
 
 %files -n libgadu-devel
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog NEWS README
 %attr(755,root,root) %{_libdir}/libgadu.so
 %{_includedir}/libgadu.h
 %{_pkgconfigdir}/libgadu.pc
