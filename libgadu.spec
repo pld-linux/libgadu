@@ -126,13 +126,13 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libgadu.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libgadu.so.3
 
-%files -n libgadu-devel
+%files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libgadu.so
 %{_includedir}/libgadu.h
 %{_pkgconfigdir}/libgadu.pc
 %{_libdir}/libgadu.la
 
-%files -n libgadu-static
+%files static
 %defattr(644,root,root,755)
 %{_libdir}/libgadu.a
