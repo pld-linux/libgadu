@@ -7,13 +7,13 @@ Summary:	libgadu library
 Summary(es.UTF-8):	Biblioteca libgadu
 Summary(pl.UTF-8):	Biblioteka libgadu
 Name:		libgadu
-Version:	1.9.1
+Version:	1.10.0
 Release:	1
 Epoch:		4
 License:	LGPL v2.1
 Group:		Libraries
 Source0:	http://toxygen.net/libgadu/files/%{name}-%{version}.tar.gz
-# Source0-md5:	8d68489f3c01daba95fd1f20661437fb
+# Source0-md5:	7780a428f0782ccaa57ad5caeed87e8e
 URL:		http://toxygen.net/libgadu/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
