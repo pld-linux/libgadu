@@ -1,8 +1,8 @@
 #
 # Conditional build:
 %bcond_without	pthread		# POSIX threads support
+%bcond_with	openssl		# use OpenSSL instead of GnuTLS
 #
-
 Summary:	libgadu library
 Summary(es.UTF-8):	Biblioteca libgadu
 Summary(pl.UTF-8):	Biblioteka libgadu
@@ -17,8 +17,9 @@ Source0:	http://toxygen.net/libgadu/files/%{name}-%{version}.tar.gz
 URL:		http://toxygen.net/libgadu/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
+%{!?with_openssl:BuildRequires:	gnutls-devel}
 BuildRequires:	libtool
-BuildRequires:	openssl-devel >= 0.9.7d
+%{?with_openssl:BuildRequires:	openssl-devel >= 0.9.7d}
 BuildRequires:	pkgconfig
 Obsoletes:	libgg
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -45,7 +46,8 @@ Summary(es.UTF-8):	Biblioteca de desarrollo de libgadu
 Summary(pl.UTF-8):	Część biblioteki libgadu dla programistów
 Group:		Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}-%{release}
-Requires:	openssl-devel
+%{!?with_openssl:Requires:	gnutls-devel}
+%{?with_openssl:Requires:	openssl-devel}
 Obsoletes:	libgg-devel
 
 %description devel
@@ -96,10 +98,9 @@ Statyczna biblioteka libgadu.
 %{__autoheader}
 %{__automake}
 %configure \
-	--enable-dynamic \
-	--enable-shared \
-	--enable-static \
+	--disable-silent-rules \
 	--without-bind \
+	%{?with_openssl:--without-gnutls} \
 %if %{with pthread}
 	--with-pthread \
 %else
