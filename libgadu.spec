@@ -21,6 +21,7 @@ BuildRequires:	automake
 BuildRequires:	libtool
 %{?with_openssl:BuildRequires:	openssl-devel >= 0.9.7d}
 BuildRequires:	pkgconfig
+BuildRequires:	zlib-devel
 Obsoletes:	libgg
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -48,6 +49,7 @@ Group:		Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 %{!?with_openssl:Requires:	gnutls-devel}
 %{?with_openssl:Requires:	openssl-devel}
+Requires:	zlib-devel
 Obsoletes:	libgg-devel
 
 %description devel
