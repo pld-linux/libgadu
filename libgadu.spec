@@ -17,11 +17,13 @@ Source0:	http://github.com/wojtekka/libgadu/releases/download/%{version}/%{name}
 URL:		http://toxygen.net/libgadu/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
-%{!?with_openssl:BuildRequires:	gnutls-devel}
+%{!?with_openssl:BuildRequires:	gnutls-devel >= 2.10.0}
 BuildRequires:	libtool
 %{?with_openssl:BuildRequires:	openssl-devel >= 0.9.7d}
+BuildRequires:	protobuf-c-devel
 BuildRequires:	pkgconfig
 BuildRequires:	zlib-devel
+%{!?with_openssl:Requires:	gnutls >= 2.10.0}
 Obsoletes:	libgg
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -47,7 +49,7 @@ Summary(es.UTF-8):	Biblioteca de desarrollo de libgadu
 Summary(pl.UTF-8):	Część biblioteki libgadu dla programistów
 Group:		Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}-%{release}
-%{!?with_openssl:Requires:	gnutls-devel}
+%{!?with_openssl:Requires:	gnutls-devel >= 2.10.0}
 %{?with_openssl:Requires:	openssl-devel}
 Requires:	zlib-devel
 Obsoletes:	libgg-devel
@@ -92,6 +94,9 @@ Statyczna biblioteka libgadu.
 
 %prep
 %setup -q
+
+# force rebuild
+%{__rm} include/packets.pb-c.h
 
 %build
 %{__libtoolize}
