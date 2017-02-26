@@ -7,20 +7,20 @@ Summary:	libgadu library
 Summary(es.UTF-8):	Biblioteca libgadu
 Summary(pl.UTF-8):	Biblioteka libgadu
 Name:		libgadu
-Version:	1.12.1
+Version:	1.12.2
 Release:	1
 Epoch:		4
 License:	LGPL v2.1
 Group:		Libraries
 Source0:	http://github.com/wojtekka/libgadu/releases/download/%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	6de8b26f3b9155a67f549ced6da93c56
+# Source0-md5:	d6b277f64c0fdf246bdbb382758ac933
 URL:		http://toxygen.net/libgadu/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
 %{!?with_openssl:BuildRequires:	gnutls-devel >= 2.10.0}
 BuildRequires:	libtool
 %{?with_openssl:BuildRequires:	openssl-devel >= 0.9.7d}
-BuildRequires:	protobuf-c-devel
+BuildRequires:	protobuf-c-devel >= 1.0.0
 BuildRequires:	pkgconfig
 BuildRequires:	zlib-devel
 %{!?with_openssl:Requires:	gnutls >= 2.10.0}
