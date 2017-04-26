@@ -24,6 +24,7 @@ BuildRequires:	protobuf-c-devel >= 1.0.0
 BuildRequires:	pkgconfig
 BuildRequires:	zlib-devel
 %{!?with_openssl:Requires:	gnutls >= 2.10.0}
+Requires:	protobuf-c >= 1.0.0
 Obsoletes:	libgg
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -51,6 +52,7 @@ Group:		Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 %{!?with_openssl:Requires:	gnutls-devel >= 2.10.0}
 %{?with_openssl:Requires:	openssl-devel}
+Requires:	protobuf-c-devel >= 1.0.0
 Requires:	zlib-devel
 Obsoletes:	libgg-devel
 
@@ -122,6 +124,9 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+# obsoleted by pkg-config
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/libgadu.la
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -139,7 +144,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libgadu.so
 %{_includedir}/libgadu.h
 %{_pkgconfigdir}/libgadu.pc
-%{_libdir}/libgadu.la
 
 %files static
 %defattr(644,root,root,755)
