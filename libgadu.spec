@@ -12,9 +12,10 @@ Release:	3
 Epoch:		4
 License:	LGPL v2.1
 Group:		Libraries
-Source0:	http://github.com/wojtekka/libgadu/releases/download/%{version}/%{name}-%{version}.tar.gz
+#Source0Download: https://github.com/wojtekka/libgadu/releases
+Source0:	https://github.com/wojtekka/libgadu/releases/download/%{version}/%{name}-%{version}.tar.gz
 # Source0-md5:	d6b277f64c0fdf246bdbb382758ac933
-URL:		http://toxygen.net/libgadu/
+URL:		http://libgadu.net/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
 %{!?with_openssl:BuildRequires:	gnutls-devel >= 2.10.0}
