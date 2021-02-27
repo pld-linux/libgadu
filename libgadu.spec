@@ -26,7 +26,7 @@ BuildRequires:	pkgconfig
 BuildRequires:	zlib-devel
 %{!?with_openssl:Requires:	gnutls >= 2.10.0}
 Requires:	protobuf-c >= 1.0.0
-Obsoletes:	libgg
+Obsoletes:	libgg < 0.9.0.20020204
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -55,7 +55,7 @@ Requires:	%{name} = %{epoch}:%{version}-%{release}
 %{?with_openssl:Requires:	openssl-devel}
 Requires:	protobuf-c-devel >= 1.0.0
 Requires:	zlib-devel
-Obsoletes:	libgg-devel
+Obsoletes:	libgg-devel < 0.9.0.20020204
 
 %description devel
 The libgadu-devel package contains the header files and some
@@ -81,7 +81,7 @@ Summary(es.UTF-8):	Biblioteca libgadu estática
 Summary(pl.UTF-8):	Statyczna biblioteka libgadu
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{epoch}:%{version}-%{release}
-Obsoletes:	libgg-static
+Obsoletes:	libgg-static < 0.9.0.20020204
 
 %description static
 Static libgadu library.
